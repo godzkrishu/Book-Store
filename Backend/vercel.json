@@ -6,14 +6,18 @@
         "use": "@vercel/node"
       },
       {
-        "src": "Frontend/dist/**",
+        "src": "Frontend/**",
         "use": "@vercel/static"
       }
     ],
     "routes": [
       {
+        "src": "/api/(.*)",
+        "dest": "/index.js"
+      },
+      {
         "src": "/(.*)",
-        "dest": "index.js"
+        "dest": "/Frontend/index.html"
       }
     ]
   }
